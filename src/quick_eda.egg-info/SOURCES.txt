@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/quick_eda/__init__.py
+src/quick_eda/quick_eda.py
+src/quick_eda.egg-info/PKG-INFO
+src/quick_eda.egg-info/SOURCES.txt
+src/quick_eda.egg-info/dependency_links.txt
+src/quick_eda.egg-info/requires.txt
+src/quick_eda.egg-info/top_level.txt

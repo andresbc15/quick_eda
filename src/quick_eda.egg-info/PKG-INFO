@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: quick_eda
+Version: 0.1.0
+Summary: Simple, readable exploratory data analysis helpers, inspired by Storytelling with Data.
+Author: Andres Cojuangco
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Dynamic: license-file

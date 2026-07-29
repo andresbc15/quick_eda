@@ -1,4 +1,4 @@
-# quick_eda
+# quick_eda_andresbc15
 
 Exploratory data analysis helpers to quickly summarize and visualize your data. Three small functions, limited dependencies (pandas + matplotlib).
 

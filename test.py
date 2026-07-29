@@ -1,4 +1,3 @@
-"""Quick smoke test: import the package and run overview() on a sample frame."""
 import pandas as pd
 from quick_eda_andresbc15 import summarize, bar_plot, line_plot
 

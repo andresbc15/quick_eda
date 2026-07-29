@@ -1,8 +1,8 @@
 """Quick smoke test: import the package and run overview() on a sample frame."""
 
+import numpy as np
 import pandas as pd
-
-from quick_eda import summarize, bar
+from quick_eda import summarize, bar, line
 
 # A small frame that exercises the interesting cases:
 #   - a clean numeric column
@@ -19,17 +19,39 @@ df = pd.DataFrame(
 
 summarize(df)
 
-# Horizontal bar chart from a DataFrame, largest group highlighted.
-offenses = pd.DataFrame(
+# Horizontal bar chart with the full storytelling treatment.
+grants = pd.DataFrame(
     {
-        "offense": [
-            "Drug Offenses", "Immigration", "Sex Offenses", "Weapons",
-            "Fraud", "Burglary", "Robbery", "Homicide", "Other",
+        "area": [
+            "Construction", "Wholesale Distribution", "Consulting Services",
+            "Transportation", "Medical Manufacturing", "Accounting Firms", "Retail",
         ],
-        "count": [75, 21, 12, 11, 10, 8, 7, 5, 3],
+        "amount": [710000, 670000, 630000, 620000, 360000, 340000, 190000],
     }
 )
-fig, ax = bar(offenses, "offense", "count", highlight_color="#a23b3b")
+fig, ax = bar(
+    grants, "area", "amount",
+    indeces_lst=[0, 1],  # row numbers into `grants` to accent; rest stay grey
+    prefix="$",
+    header="Investment by area of impact",
+    subheader="Dollars in 000s",
+)
 fig.savefig("bar_demo.png", dpi=150, bbox_inches="tight")
 print("saved bar_demo.png")
+
+# Line chart with a couple of highlighted points.
+trend = pd.DataFrame(
+    {
+        "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        "revenue": [120, 135, 130, 160, 175, 168, 210],
+    }
+)
+fig, ax = line(
+    trend, "month", "revenue",
+    indeces_lst=[0, 6],  # mark the first and last points with a dot + value
+    header="Revenue climbed through the first half",
+    subheader="IN MILLIONS (USD)",
+)
+fig.savefig("line_demo.png", dpi=150, bbox_inches="tight")
+print("saved line_demo.png")
 

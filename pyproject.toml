@@ -3,9 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "quick_eda"
+name = "quick-eda-andresbc15"
 version = "0.1.0"
-description = "Simple, readable exploratory data analysis helpers, inspired by Storytelling with Data."
+description = "Exploratory data analysis helpers to quickly summarize and visualize your data"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }

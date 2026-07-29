@@ -49,6 +49,11 @@ def summarize(df):
     Reads top to bottom: the shape first, then one line per column showing
     its type, how much is missing, and a note for anything worth a second
     look. Clean columns stay quiet so problems stand out.
+
+    Args:
+        df (pandas.DataFrame): Source data.
+    Returns:
+        Empty
     """
     n_rows, n_cols = df.shape
 
@@ -94,7 +99,7 @@ def summarize(df):
     print()
 
 
-def bar(df, category_col, value, indeces_lst=None, highlight_color="#2e5a87",
+def bar_plot(df, category_col, value, indeces_lst=None, highlight_color="#2e5a87",
         prefix="", suffix="", header="", subheader=""):
     """Draw a decluttered horizontal bar chart, biggest bar on top.
 
@@ -167,7 +172,7 @@ def bar(df, category_col, value, indeces_lst=None, highlight_color="#2e5a87",
     return fig, ax
 
 
-def line(df, x_col, y_col, indeces_lst=None, color="#2e5a87",
+def line_plot(df, x_col, y_col, indeces_lst=None, color="#2e5a87",
          units="", header="", subheader=""):
     """Draw a decluttered line chart, with optional highlighted points.
 

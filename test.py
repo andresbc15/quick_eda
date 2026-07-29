@@ -1,8 +1,6 @@
 """Quick smoke test: import the package and run overview() on a sample frame."""
-
-import numpy as np
 import pandas as pd
-from quick_eda import summarize, bar, line
+from quick_eda_andresbc15 import summarize, bar_plot, line_plot
 
 # A small frame that exercises the interesting cases:
 #   - a clean numeric column
@@ -26,10 +24,10 @@ grants = pd.DataFrame(
             "Construction", "Wholesale Distribution", "Consulting Services",
             "Transportation", "Medical Manufacturing", "Accounting Firms", "Retail",
         ],
-        "amount": [710000, 670000, 630000, 620000, 360000, 340000, 190000],
+        "amount": [710, 670, 630, 620, 360, 340, 190],
     }
 )
-fig, ax = bar(
+fig, ax = bar_plot(
     grants, "area", "amount",
     indeces_lst=[0, 1],  # row numbers into `grants` to accent; rest stay grey
     prefix="$",
@@ -46,7 +44,7 @@ trend = pd.DataFrame(
         "revenue": [120, 135, 130, 160, 175, 168, 210],
     }
 )
-fig, ax = line(
+fig, ax = line_plot(
     trend, "month", "revenue",
     indeces_lst=[0, 6],  # mark the first and last points with a dot + value
     header="Revenue climbed through the first half",
